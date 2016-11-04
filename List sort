@@ -13,4 +13,10 @@ for lines in fh:   
         if word in lst:continue        
     lst.append(word)    
     lst.sort()    
-print (lst)   
+print (lst) 
+
+Desired Solution:
+['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'breaks', 'east', 'envious', 'fair', 'grief', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'the', 'through', 'what', 'window', 'with', 'yonder']
+
+Courtesy: Problem in Coursera Course by Dr.Chuck
+
