@@ -1,0 +1,32 @@
+9.4 Write a program to read through the mbox-short.txt and figure out who has the sent  the greatest number of mail messages.  The program looks for 'From ' lines and takes the second word of those lines as the person who sent the mail.  The program creates a Python dictionary that maps the sender's mail address to a count of the number of times they appear in the file.  After the dictionary is produced, the program reads through the dictionary using a maximum loop to find the most prolific committer.
+
+Solution:
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+emailids = list()
+Emailct = dict()
+for lines in handle:    
+    lines.strip()    
+    if lines.startswith('From '):        
+        lines.rstrip()        
+        words = lines.split()        
+        emailid = words[1]        
+        emailids.append(words[1])      
+for id in emailids:    
+    Emailct[id] = Emailct.get(id,0) + 1
+
+Greatword = None
+Greatest = None
+
+for key,value in Emailct.items():    
+    if Greatest is None or Greatest < value:        
+    Greatest = value        
+    Greatword = key
+
+print Greatword,Greatest  
+
+Desired Output:
+cwen@iupui.edu 5
+
+Courtesy: Problem in Coursera Course by Dr.Chuck
